@@ -2,6 +2,7 @@ import { FlatList, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } 
 import React, { useEffect, useState } from 'react'
 import FavBtn from '../../atoms/FavBtn'
 import CommonTxt from '../../atoms/DetailsTxt'
+import DetailsLayout from '../../template/Details'
 
 type locationDetail = {
     name: string,
@@ -90,7 +91,7 @@ const DetailsScreen = ({ navigation, route }: any) => {
     }, [])
 
     return (
-        <View>
+       <DetailsLayout >
             <FavBtn title={"Save ⭐"} onPress={() => saveToFav(locationDetails.name)} />
 
             <View style={styles.card}>
@@ -121,7 +122,7 @@ const DetailsScreen = ({ navigation, route }: any) => {
                     </View>
                 )}
             />
-        </View>
+        </DetailsLayout>
     )
 }
 
